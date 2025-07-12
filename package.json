@@ -49,12 +49,12 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.0",
     "eslint": "8.49.0",
-    "eslint-config-next": "13.5.1",
+    "eslint-config-next": "14.2.5", // Cập nhật phiên bản eslint-config-next
     "framer-motion": "^10.16.16",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.446.0",
     "lunar-javascript": "^1.7.3",
-    "next": "13.5.1",
+    "next": "14.2.5", // Cập nhật phiên bản Next.js
     "next-auth": "^4.24.5",
     "next-themes": "^0.3.0",
     "postcss": "8.4.30",
