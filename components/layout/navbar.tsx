@@ -64,7 +64,7 @@ export function Navbar() {
                     >
                       <Link
                         href={item.href}
-                        className="text-lg font-bold text-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:drop-shadow-lg relative group flex items-center space-x-1"
+                        className="text-lg font-bold transition-all duration-300 hover:scale-110 hover:drop-shadow-lg relative group flex items-center space-x-1 dark:text-white dark:hover:text-blue-400 text-gray-800 hover:text-primary"
                       >
                         <span>{item.name}</span>
                         <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
@@ -91,7 +91,7 @@ export function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-lg font-bold text-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:drop-shadow-lg relative group"
+                      className="text-lg font-bold transition-all duration-300 hover:scale-110 hover:drop-shadow-lg relative group dark:text-white dark:hover:text-blue-400 text-gray-800 hover:text-primary"
                     >
                       {item.name}
                       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-purple-600 transition-all duration-300 group-hover:w-full"></span>

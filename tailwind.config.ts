@@ -68,6 +68,16 @@ const config: Config = {
         'mystical-gold': 'hsl(var(--mystical-gold))',
         'mystical-deep-purple': 'hsl(var(--mystical-deep-purple))',
         'mystical-dark-purple': 'hsl(var(--mystical-dark-purple))',
+        // Dark mode specific colors
+        'dark-bg-primary': '#243B55',
+        'dark-bg-secondary': '#141E30',
+        'dark-text-primary': '#FFFFFF',
+        'dark-text-secondary': '#E5E7EB',
+        'dark-text-muted': '#D1D5DB',
+        // Light mode specific colors
+        'light-text-primary': '#000000',
+        'light-text-secondary': '#333333',
+        'light-text-muted': '#666666',
       },
       fontFamily: {
         'sans': ['Roboto', 'Open Sans', 'system-ui', 'sans-serif'],

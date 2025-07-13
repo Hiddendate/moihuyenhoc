@@ -424,7 +424,7 @@ export function DiBocTienTri() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 i-ching-component">
       {/* Header */}
       <Card className="mystical-card">
         <CardHeader className="text-center">

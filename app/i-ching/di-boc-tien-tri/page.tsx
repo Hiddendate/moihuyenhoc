@@ -6,7 +6,7 @@ import { BackButton } from '@/components/layout/back-button';
 
 export default function DiBocTienTriPage() {
   return (
-    <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8 i-ching-component">
       <div className="container mx-auto max-w-6xl">
         <BackButton href="/i-ching" text="Quay lại" />
         {/* Header */}

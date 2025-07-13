@@ -11,8 +11,8 @@ import {
 
 export default function IChingPage() {
   return (
-   // THAY ĐỔI: Thêm các class 'flex items-center justify-center' để canh giữa nội dung theo chiều dọc và chiều ngang
-      <div className="min-h-screen flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
+   // THAY ĐỔI: Thêm class i-ching-component để áp dụng styling riêng cho Light Mode
+      <div className="min-h-screen flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8 i-ching-component">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
