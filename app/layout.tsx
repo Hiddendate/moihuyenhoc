@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/footer';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { LanguageProvider } from '@/contexts/language-context';
 import { Toaster } from '@/components/ui/sonner';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -31,9 +32,10 @@ export default function RootLayout({
       <body className={`${inter.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
+          defaultTheme="system"
+          enableSystem={true}
+          disableTransitionOnChange={false}
+          storageKey="huyenhoc-theme"
         >
           <LanguageProvider>
             <div className="relative min-h-screen flex flex-col cosmic-background">
@@ -46,6 +48,21 @@ export default function RootLayout({
             <Toaster />
           </LanguageProvider>
         </ThemeProvider>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.getItem('huyenhoc-theme') === 'dark' || 
+                    (!localStorage.getItem('huyenhoc-theme') && 
+                     window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark')
+                } else {
+                  document.documentElement.classList.remove('dark')
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
       </body>
     </html>
   );
