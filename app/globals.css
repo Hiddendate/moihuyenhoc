@@ -78,12 +78,25 @@
   body.dark {
     background: linear-gradient(to left, #243B55, #141E30);
     color: #FFFFFF;
-    font-weight: 500; /* Tăng độ đậm font cho dark mode */
+    font-weight: 600; /* Tăng độ đậm font cho dark mode để cải thiện khả năng đọc */
   }
   
-  /* Dark Mode Text Colors */
+  /* Dark Mode Text Colors - Cải thiện độ tương phản */
   .dark * {
     color: #FFFFFF !important;
+    font-weight: 600; /* Tăng font-weight cho tất cả text trong dark mode */
+  }
+  
+  /* Dark Mode Headings - Tăng độ đậm hơn nữa */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    font-weight: 700 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Thêm text shadow để tăng độ tương phản */
+  }
+  
+  /* Dark Mode - Cải thiện khả năng đọc cho text nhỏ */
+  .dark .text-sm, .dark .text-xs {
+    font-weight: 600 !important;
+    letter-spacing: 0.025em; /* Tăng letter spacing cho text nhỏ */
   }
   
   /* Light Mode Text Colors for I-Ching Components */
@@ -99,7 +112,7 @@
   body:not(.dark) .i-ching-component h5,
   body:not(.dark) .i-ching-component h6 {
     color: #000000 !important;
-    font-weight: 600;
+    font-weight: 700;
   }
   
   body:not(.dark) .i-ching-component .text-muted-foreground {
@@ -125,10 +138,30 @@
     background: rgba(255, 255, 255, 0.95);
   }
   
+  /* Light Mode - I-Ching Component Cards với viền đen */
   body:not(.dark) .i-ching-component .moonrise-card,
   body:not(.dark) .i-ching-component .mystical-card {
-    @apply bg-white border-gray-200;
+    @apply bg-white;
     background: #FFFFFF !important;
+    border: 2px solid #000000 !important; /* Viền đen đậm cho component Kinh Dịch */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Light Mode - Dị Bốc Tiên Tri Cards với nền xanh dương */
+  body:not(.dark) .di-boc-topic-cards .topic-group-card {
+    background: #3B82F6 !important; /* Màu xanh dương */
+    border: 2px solid #1E40AF !important; /* Viền xanh đậm hơn */
+    color: #FFFFFF !important;
+  }
+  
+  body:not(.dark) .di-boc-topic-cards .topic-group-card * {
+    color: #FFFFFF !important;
+  }
+  
+  body:not(.dark) .di-boc-topic-cards .topic-group-card .topic-item {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
   }
   
   /* Dark Mode Cards */
@@ -193,6 +226,7 @@
   body.dark textarea {
     @apply bg-gray-700/50 border-gray-600/50 text-white;
     color: #FFFFFF !important;
+    font-weight: 600; /* Tăng font-weight cho input trong dark mode */
   }
   
   /* Badge Styles */
@@ -202,6 +236,7 @@
   
   body.dark .badge {
     @apply bg-gray-700 text-gray-100 border-gray-600;
+    font-weight: 600;
   }
   
   /* Alert Styles */
@@ -211,6 +246,7 @@
   
   body.dark .alert {
     @apply bg-gray-800 border-gray-700 text-gray-100;
+    font-weight: 600;
   }
   
   /* Separator Styles */
@@ -242,7 +278,8 @@
   
   body.dark .section-title {
     @apply text-white;
-    font-weight: 700;
+    font-weight: 800; /* Tăng font-weight cho title trong dark mode */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
   
   /* Font Styles */
@@ -404,7 +441,7 @@ body.dark {
     --text-primary: #FFFFFF;
     --text-secondary: #FFFFFF;
     --text-muted: #F3F4F6;
-    font-weight: 600;
+    font-weight: 700;
   }
   
   body:not(.dark) {
@@ -413,4 +450,22 @@ body.dark {
     --text-muted: #1F2937;
     font-weight: 600;
   }
+  
+  /* Tăng độ tương phản cho high contrast mode */
+  body.dark * {
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+  }
+}
+
+/* Cải thiện khả năng đọc cho hình ảnh minh họa trong dark mode */
+body.dark img {
+  filter: brightness(1.1) contrast(1.1);
+}
+
+body.dark .image-text-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  color: #FFFFFF;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }

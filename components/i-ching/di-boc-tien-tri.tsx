@@ -788,9 +788,9 @@ export function DiBocTienTri() {
           {/* Topic Groups Summary with Detailed Information */}
           <div className="mt-6">
             <h4 className="font-semibold text-mystical-gold mb-4 text-lg">64 Chủ Đề Theo 8 Cung Chi Tiết</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 di-boc-topic-cards">
               {Object.entries(TOPIC_GROUPS).map(([groupName, groupData]) => (
-                <div key={groupName} className={`p-4 rounded-lg border ${groupData.color}`}>
+                <div key={groupName} className={`p-4 rounded-lg border topic-group-card ${groupData.color}`}>
                   <div className="mb-3">
                     <div className="font-bold text-base mb-2">{groupName}</div>
                     <div className="text-sm opacity-80 mb-3 leading-relaxed">
@@ -803,7 +803,7 @@ export function DiBocTienTri() {
 
                   <div className="space-y-2">
                     {groupData.topics.map((topicKey) => (
-                      <div key={topicKey} className="text-sm leading-relaxed p-2 bg-white/50 rounded border border-current/20">
+                      <div key={topicKey} className="text-sm leading-relaxed p-2 bg-white/50 rounded border border-current/20 topic-item">
                         • {TOPICS[topicKey as keyof typeof TOPICS].name}
                       </div>
                     ))}

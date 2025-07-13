@@ -64,7 +64,7 @@ export function Navbar() {
                     >
                       <Link
                         href={item.href}
-                        className="text-lg font-bold transition-all duration-300 hover:scale-110 hover:drop-shadow-lg relative group flex items-center space-x-1 dark:text-white dark:hover:text-blue-400 text-gray-800 hover:text-primary"
+                        className="text-lg font-bold transition-all duration-300 hover:scale-110 hover:drop-shadow-lg relative group flex items-center space-x-1 dark:text-white dark:hover:text-blue-400 text-gray-800 hover:text-primary dark:font-semibold"
                       >
                         <span>{item.name}</span>
                         <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
@@ -80,7 +80,7 @@ export function Navbar() {
                             <Link
                               key={subItem.name}
                               href={subItem.href}
-                              className="block px-4 py-3 text-foreground hover:text-primary hover:bg-accent/50 transition-all duration-200 font-medium"
+                              className="block px-4 py-3 text-foreground hover:text-primary hover:bg-accent/50 transition-all duration-200 font-medium dark:font-semibold"
                             >
                               {subItem.name}
                             </Link>
@@ -91,7 +91,7 @@ export function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-lg font-bold transition-all duration-300 hover:scale-110 hover:drop-shadow-lg relative group dark:text-white dark:hover:text-blue-400 text-gray-800 hover:text-primary"
+                      className="text-lg font-bold transition-all duration-300 hover:scale-110 hover:drop-shadow-lg relative group dark:text-white dark:hover:text-blue-400 text-gray-800 hover:text-primary dark:font-semibold"
                     >
                       {item.name}
                       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-purple-600 transition-all duration-300 group-hover:w-full"></span>
@@ -128,7 +128,7 @@ export function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-xl font-bold text-foreground hover:text-primary transition-all duration-300 py-3 border-b border-border hover:border-primary block"
+                      className="text-xl font-bold text-foreground hover:text-primary transition-all duration-300 py-3 border-b border-border hover:border-primary block dark:font-semibold"
                     >
                       {item.name}
                     </Link>
@@ -139,7 +139,7 @@ export function Navbar() {
                             key={subItem.name}
                             href={subItem.href}
                             onClick={() => setIsOpen(false)}
-                            className="text-lg text-muted-foreground hover:text-primary transition-all duration-300 py-2 block"
+                            className="text-lg text-muted-foreground hover:text-primary transition-all duration-300 py-2 block dark:font-medium"
                           >
                             {subItem.name}
                           </Link>

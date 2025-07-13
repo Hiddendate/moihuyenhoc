@@ -15,32 +15,32 @@ export function Footer() {
                 Huyền Học
               </span>
             </Link>
-            <p className="max-w-md dark:text-gray-300 text-gray-600">
+            <p className="max-w-md dark:text-gray-300 text-gray-600 dark:font-medium">
               Khám phá trí tuệ Đông Phương thông qua các công cụ tương tác và hướng dẫn toàn diện. 
             </p>
           </div>
 
           {/* Cột 3: Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4 dark:text-white text-gray-800">Liên Kết Nhanh</h3>
+            <h3 className="font-semibold mb-4 dark:text-white text-gray-800 dark:font-bold">Liên Kết Nhanh</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/i-ching" className="transition-colors dark:text-gray-300 dark:hover:text-blue-400 text-gray-600 hover:text-primary">
+                <Link href="/i-ching" className="transition-colors dark:text-gray-300 dark:hover:text-blue-400 text-gray-600 hover:text-primary dark:font-medium">
                   Kinh Dịch
                 </Link>
               </li>
               <li>
-                <Link href="/date-calculator" className="transition-colors dark:text-gray-300 dark:hover:text-blue-400 text-gray-600 hover:text-primary">
+                <Link href="/date-calculator" className="transition-colors dark:text-gray-300 dark:hover:text-blue-400 text-gray-600 hover:text-primary dark:font-medium">
                   Tượng Số Học
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="transition-colors dark:text-gray-300 dark:hover:text-blue-400 text-gray-600 hover:text-primary">
+                <Link href="/about" className="transition-colors dark:text-gray-300 dark:hover:text-blue-400 text-gray-600 hover:text-primary dark:font-medium">
                   Về Chúng Tôi
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="transition-colors dark:text-gray-300 dark:hover:text-blue-400 text-gray-600 hover:text-primary">
+                <Link href="/contact" className="transition-colors dark:text-gray-300 dark:hover:text-blue-400 text-gray-600 hover:text-primary dark:font-medium">
                   Liên Hệ
                 </Link>
               </li>
@@ -51,7 +51,7 @@ export function Footer() {
         <Separator className="my-8 bg-border/20" />
         
          <div className="flex flex-col md:flex-row justify-center items-center">
-          <p className="text-sm text-center mt-2 md:mt-0 dark:text-gray-400 text-gray-500">
+          <p className="text-sm text-center mt-2 md:mt-0 dark:text-gray-400 text-gray-500 dark:font-medium">
             "Sự đồng bộ là một món quà của thực tại dành cho ai thấy mà tin" <br /> Carl Jung
           </p>
         </div>
