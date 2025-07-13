@@ -78,26 +78,166 @@
   body.dark {
     background: linear-gradient(to left, #243B55, #141E30);
     color: #FFFFFF;
-    font-weight: 600; /* Tăng độ đậm font cho dark mode để cải thiện khả năng đọc */
+    font-weight: 600;
   }
   
-  /* Dark Mode Text Colors - Cải thiện độ tương phản */
+  /* ===== DARK MODE TEXT OPTIMIZATION ===== */
+  
+  /* Dark Mode - Default text colors for high contrast */
   .dark * {
     color: #FFFFFF !important;
-    font-weight: 600; /* Tăng font-weight cho tất cả text trong dark mode */
+    font-weight: 600;
   }
   
-  /* Dark Mode Headings - Tăng độ đậm hơn nữa */
-  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-    font-weight: 700 !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Thêm text shadow để tăng độ tương phản */
-  }
-  
-  /* Dark Mode - Cải thiện khả năng đọc cho text nhỏ */
-  .dark .text-sm, .dark .text-xs {
+  /* Dark Mode - Cards with WHITE backgrounds need BLACK text */
+  .dark .white-bg-card,
+  .dark .white-bg-card *,
+  .dark .bg-white,
+  .dark .bg-white *,
+  .dark [style*="background: #FFFFFF"],
+  .dark [style*="background: #FFFFFF"] *,
+  .dark [style*="background: rgba(255, 255, 255"],
+  .dark [style*="background: rgba(255, 255, 255"] *,
+  .dark .bg-white\/95,
+  .dark .bg-white\/95 *,
+  .dark .bg-white\/90,
+  .dark .bg-white\/90 *,
+  .dark .bg-white\/80,
+  .dark .bg-white\/80 *,
+  .dark .bg-white\/70,
+  .dark .bg-white\/70 *,
+  .dark .bg-white\/50,
+  .dark .bg-white\/50 * {
+    color: #000000 !important;
     font-weight: 600 !important;
-    letter-spacing: 0.025em; /* Tăng letter spacing cho text nhỏ */
   }
+  
+  /* Dark Mode - Light colored backgrounds need DARK text */
+  .dark .bg-gray-50,
+  .dark .bg-gray-50 *,
+  .dark .bg-gray-100,
+  .dark .bg-gray-100 *,
+  .dark .bg-blue-50,
+  .dark .bg-blue-50 *,
+  .dark .bg-green-50,
+  .dark .bg-green-50 *,
+  .dark .bg-yellow-50,
+  .dark .bg-yellow-50 *,
+  .dark .bg-purple-50,
+  .dark .bg-purple-50 *,
+  .dark .bg-red-50,
+  .dark .bg-red-50 *,
+  .dark .bg-orange-50,
+  .dark .bg-orange-50 *,
+  .dark .bg-pink-50,
+  .dark .bg-pink-50 *,
+  .dark .bg-indigo-50,
+  .dark .bg-indigo-50 *,
+  .dark .bg-teal-50,
+  .dark .bg-teal-50 *,
+  .dark .bg-amber-50,
+  .dark .bg-amber-50 * {
+    color: #000000 !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Dark Mode - Semi-transparent light backgrounds */
+  .dark [class*="bg-white/"],
+  .dark [class*="bg-white/"] *,
+  .dark [class*="bg-gray-50/"],
+  .dark [class*="bg-gray-50/"] *,
+  .dark [class*="bg-gray-100/"],
+  .dark [class*="bg-gray-100/"] * {
+    color: #000000 !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Dark Mode - Headings need extra contrast */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Dark Mode - Headings on white backgrounds */
+  .dark .bg-white h1,
+  .dark .bg-white h2,
+  .dark .bg-white h3,
+  .dark .bg-white h4,
+  .dark .bg-white h5,
+  .dark .bg-white h6,
+  .dark .white-bg-card h1,
+  .dark .white-bg-card h2,
+  .dark .white-bg-card h3,
+  .dark .white-bg-card h4,
+  .dark .white-bg-card h5,
+  .dark .white-bg-card h6 {
+    color: #000000 !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+  }
+  
+  /* Dark Mode - Small text improvements */
+  .dark .text-sm, .dark .text-xs {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.025em;
+  }
+  
+  /* Dark Mode - Small text on white backgrounds */
+  .dark .bg-white .text-sm,
+  .dark .bg-white .text-xs,
+  .dark .white-bg-card .text-sm,
+  .dark .white-bg-card .text-xs {
+    color: #000000 !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Dark Mode - Muted text colors */
+  .dark .text-muted-foreground {
+    color: #E5E7EB !important;
+    font-weight: 600 !important;
+  }
+  
+  .dark .bg-white .text-muted-foreground,
+  .dark .white-bg-card .text-muted-foreground {
+    color: #374151 !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Dark Mode - Gray text variations */
+  .dark .text-gray-600 {
+    color: #D1D5DB !important;
+    font-weight: 600 !important;
+  }
+  
+  .dark .text-gray-500 {
+    color: #E5E7EB !important;
+    font-weight: 600 !important;
+  }
+  
+  .dark .text-gray-400 {
+    color: #F3F4F6 !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Dark Mode - Gray text on white backgrounds */
+  .dark .bg-white .text-gray-600,
+  .dark .white-bg-card .text-gray-600 {
+    color: #4B5563 !important;
+  }
+  
+  .dark .bg-white .text-gray-500,
+  .dark .white-bg-card .text-gray-500 {
+    color: #6B7280 !important;
+  }
+  
+  .dark .bg-white .text-gray-400,
+  .dark .white-bg-card .text-gray-400 {
+    color: #9CA3AF !important;
+  }
+  
+  /* ===== LIGHT MODE TEXT COLORS ===== */
   
   /* Light Mode Text Colors for I-Ching Components */
   body:not(.dark) .i-ching-component,
@@ -116,16 +256,18 @@
   }
   
   body:not(.dark) .i-ching-component .text-muted-foreground {
-    color: #333333 !important;
+    color: #374151 !important;
   }
   
   body:not(.dark) .i-ching-component .text-gray-600 {
-    color: #333333 !important;
+    color: #4B5563 !important;
   }
   
   body:not(.dark) .i-ching-component .text-gray-500 {
-    color: #666666 !important;
+    color: #6B7280 !important;
   }
+  
+  /* ===== CARD STYLES ===== */
   
   /* Card Styles */
   .moonrise-card {
@@ -143,14 +285,14 @@
   body:not(.dark) .i-ching-component .mystical-card {
     @apply bg-white;
     background: #FFFFFF !important;
-    border: 2px solid #000000 !important; /* Viền đen đậm cho component Kinh Dịch */
+    border: 2px solid #000000 !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   /* Light Mode - Dị Bốc Tiên Tri Cards với nền xanh dương */
   body:not(.dark) .di-boc-topic-cards .topic-group-card {
-    background: #3B82F6 !important; /* Màu xanh dương */
-    border: 2px solid #1E40AF !important; /* Viền xanh đậm hơn */
+    background: #3B82F6 !important;
+    border: 2px solid #1E40AF !important;
     color: #FFFFFF !important;
   }
   
@@ -174,6 +316,14 @@
     @apply bg-gray-800/90 border-yellow-500/20 hover:border-yellow-500/40;
     background: rgba(31, 41, 55, 0.9);
   }
+  
+  /* Dark Mode - Special handling for cards with white backgrounds */
+  body.dark .moonrise-card.white-bg-card {
+    background: #FFFFFF !important;
+    border: 2px solid #374151 !important;
+  }
+  
+  /* ===== BUTTON STYLES ===== */
   
   /* Button Styles */
   .moonrise-button {
@@ -204,6 +354,8 @@
     @apply bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 hover:from-yellow-500 hover:to-yellow-600 hover:shadow-yellow-400/25;
   }
   
+  /* ===== ICON COLORS ===== */
+  
   /* Icon Colors */
   body:not(.dark) .i-ching-component svg {
     color: #000000 !important;
@@ -212,6 +364,14 @@
   body.dark svg {
     color: #FFFFFF !important;
   }
+  
+  /* Dark Mode - Icons on white backgrounds */
+  body.dark .bg-white svg,
+  body.dark .white-bg-card svg {
+    color: #000000 !important;
+  }
+  
+  /* ===== INPUT STYLES ===== */
   
   /* Input Styles */
   body:not(.dark) input,
@@ -226,8 +386,22 @@
   body.dark textarea {
     @apply bg-gray-700/50 border-gray-600/50 text-white;
     color: #FFFFFF !important;
-    font-weight: 600; /* Tăng font-weight cho input trong dark mode */
+    font-weight: 600;
   }
+  
+  /* Dark Mode - Inputs on white backgrounds */
+  body.dark .bg-white input,
+  body.dark .bg-white select,
+  body.dark .bg-white textarea,
+  body.dark .white-bg-card input,
+  body.dark .white-bg-card select,
+  body.dark .white-bg-card textarea {
+    color: #000000 !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: #D1D5DB !important;
+  }
+  
+  /* ===== BADGE STYLES ===== */
   
   /* Badge Styles */
   body:not(.dark) .badge {
@@ -239,6 +413,16 @@
     font-weight: 600;
   }
   
+  /* Dark Mode - Badges on white backgrounds */
+  body.dark .bg-white .badge,
+  body.dark .white-bg-card .badge {
+    background: #F3F4F6 !important;
+    color: #1F2937 !important;
+    border-color: #D1D5DB !important;
+  }
+  
+  /* ===== ALERT STYLES ===== */
+  
   /* Alert Styles */
   body:not(.dark) .alert {
     @apply bg-white border-gray-200 text-gray-800;
@@ -249,6 +433,8 @@
     font-weight: 600;
   }
   
+  /* ===== SEPARATOR STYLES ===== */
+  
   /* Separator Styles */
   body:not(.dark) .separator {
     @apply bg-gray-200;
@@ -258,6 +444,14 @@
     @apply bg-gray-700;
   }
   
+  /* Dark Mode - Separators on white backgrounds */
+  body.dark .bg-white .separator,
+  body.dark .white-bg-card .separator {
+    background: #E5E7EB !important;
+  }
+  
+  /* ===== SCROLL AREA STYLES ===== */
+  
   /* Scroll Area Styles */
   body:not(.dark) .scroll-area {
     @apply bg-white;
@@ -266,6 +460,8 @@
   body.dark .scroll-area {
     @apply bg-gray-800;
   }
+  
+  /* ===== SECTION TITLE ===== */
   
   /* Section Title */
   .section-title {
@@ -277,10 +473,12 @@
   }
   
   body.dark .section-title {
-    @apply text-white;
-    font-weight: 800; /* Tăng font-weight cho title trong dark mode */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
   }
+  
+  /* ===== FONT STYLES ===== */
   
   /* Font Styles */
   .font-mystical {
@@ -299,6 +497,8 @@
   .font-greek {
     font-family: 'Times New Roman', serif;
   }
+  
+  /* ===== BACKGROUND UTILITIES ===== */
   
   /* Background Utilities */
   .cosmic-background {
@@ -427,9 +627,10 @@ body.dark .loading-skeleton {
   }
 }
 
+/* ===== HIGH CONTRAST MODE SUPPORT ===== */
+
 /* Accessibility improvements for dark mode */
 body.dark {
-  /* Ensure minimum contrast ratio of 4.5:1 */
   --text-primary: #FFFFFF;
   --text-secondary: #E5E7EB;
   --text-muted: #D1D5DB;
@@ -456,7 +657,17 @@ body.dark {
     font-weight: 700 !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
   }
+  
+  /* High contrast - White backgrounds in dark mode */
+  body.dark .bg-white *,
+  body.dark .white-bg-card * {
+    color: #000000 !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+  }
 }
+
+/* ===== IMAGE TEXT OVERLAY IMPROVEMENTS ===== */
 
 /* Cải thiện khả năng đọc cho hình ảnh minh họa trong dark mode */
 body.dark img {
@@ -464,8 +675,54 @@ body.dark img {
 }
 
 body.dark .image-text-overlay {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   color: #FFFFFF;
   font-weight: 700;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ===== SPECIFIC COMPONENT OVERRIDES ===== */
+
+/* Dark Mode - Specific overrides for complex components */
+body.dark .dialog-content,
+body.dark .popover-content,
+body.dark .dropdown-content {
+  background: #1F2937 !important;
+  border: 1px solid #374151 !important;
+  color: #FFFFFF !important;
+}
+
+/* Dark Mode - White dialog/popover content */
+body.dark .dialog-content.white-bg,
+body.dark .popover-content.white-bg,
+body.dark .dropdown-content.white-bg {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+body.dark .dialog-content.white-bg *,
+body.dark .popover-content.white-bg *,
+body.dark .dropdown-content.white-bg * {
+  color: #000000 !important;
+}
+
+/* ===== UTILITY CLASSES FOR MANUAL OVERRIDE ===== */
+
+/* Utility classes for manual text color control */
+.dark-text-white {
+  color: #FFFFFF !important;
+}
+
+.dark-text-black {
+  color: #000000 !important;
+}
+
+body.dark .force-white-text,
+body.dark .force-white-text * {
+  color: #FFFFFF !important;
+}
+
+body.dark .force-black-text,
+body.dark .force-black-text * {
+  color: #000000 !important;
 }
