@@ -81,192 +81,6 @@
     font-weight: 600;
   }
   
-  /* ===== DARK MODE TEXT OPTIMIZATION ===== */
-  
-  /* Dark Mode - Default text colors for high contrast */
-  .dark * {
-    color: #FFFFFF !important;
-    font-weight: 600;
-  }
-  
-  /* Dark Mode - Cards with WHITE backgrounds need BLACK text */
-  .dark .white-bg-card,
-  .dark .white-bg-card *,
-  .dark .bg-white,
-  .dark .bg-white *,
-  .dark [style*="background: #FFFFFF"],
-  .dark [style*="background: #FFFFFF"] *,
-  .dark [style*="background: rgba(255, 255, 255"],
-  .dark [style*="background: rgba(255, 255, 255"] *,
-  .dark .bg-white\/95,
-  .dark .bg-white\/95 *,
-  .dark .bg-white\/90,
-  .dark .bg-white\/90 *,
-  .dark .bg-white\/80,
-  .dark .bg-white\/80 *,
-  .dark .bg-white\/70,
-  .dark .bg-white\/70 *,
-  .dark .bg-white\/50,
-  .dark .bg-white\/50 * {
-    color: #000000 !important;
-    font-weight: 600 !important;
-  }
-  
-  /* Dark Mode - Light colored backgrounds need DARK text */
-  .dark .bg-gray-50,
-  .dark .bg-gray-50 *,
-  .dark .bg-gray-100,
-  .dark .bg-gray-100 *,
-  .dark .bg-blue-50,
-  .dark .bg-blue-50 *,
-  .dark .bg-green-50,
-  .dark .bg-green-50 *,
-  .dark .bg-yellow-50,
-  .dark .bg-yellow-50 *,
-  .dark .bg-purple-50,
-  .dark .bg-purple-50 *,
-  .dark .bg-red-50,
-  .dark .bg-red-50 *,
-  .dark .bg-orange-50,
-  .dark .bg-orange-50 *,
-  .dark .bg-pink-50,
-  .dark .bg-pink-50 *,
-  .dark .bg-indigo-50,
-  .dark .bg-indigo-50 *,
-  .dark .bg-teal-50,
-  .dark .bg-teal-50 *,
-  .dark .bg-amber-50,
-  .dark .bg-amber-50 * {
-    color: #000000 !important;
-    font-weight: 600 !important;
-  }
-  
-  /* Dark Mode - Semi-transparent light backgrounds */
-  .dark [class*="bg-white/"],
-  .dark [class*="bg-white/"] *,
-  .dark [class*="bg-gray-50/"],
-  .dark [class*="bg-gray-50/"] *,
-  .dark [class*="bg-gray-100/"],
-  .dark [class*="bg-gray-100/"] * {
-    color: #000000 !important;
-    font-weight: 600 !important;
-  }
-  
-  /* Dark Mode - Headings need extra contrast */
-  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-    color: #FFFFFF !important;
-    font-weight: 700 !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Dark Mode - Headings on white backgrounds */
-  .dark .bg-white h1,
-  .dark .bg-white h2,
-  .dark .bg-white h3,
-  .dark .bg-white h4,
-  .dark .bg-white h5,
-  .dark .bg-white h6,
-  .dark .white-bg-card h1,
-  .dark .white-bg-card h2,
-  .dark .white-bg-card h3,
-  .dark .white-bg-card h4,
-  .dark .white-bg-card h5,
-  .dark .white-bg-card h6 {
-    color: #000000 !important;
-    font-weight: 700 !important;
-    text-shadow: none !important;
-  }
-  
-  /* Dark Mode - Small text improvements */
-  .dark .text-sm, .dark .text-xs {
-    color: #FFFFFF !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.025em;
-  }
-  
-  /* Dark Mode - Small text on white backgrounds */
-  .dark .bg-white .text-sm,
-  .dark .bg-white .text-xs,
-  .dark .white-bg-card .text-sm,
-  .dark .white-bg-card .text-xs {
-    color: #000000 !important;
-    font-weight: 600 !important;
-  }
-  
-  /* Dark Mode - Muted text colors */
-  .dark .text-muted-foreground {
-    color: #E5E7EB !important;
-    font-weight: 600 !important;
-  }
-  
-  .dark .bg-white .text-muted-foreground,
-  .dark .white-bg-card .text-muted-foreground {
-    color: #374151 !important;
-    font-weight: 600 !important;
-  }
-  
-  /* Dark Mode - Gray text variations */
-  .dark .text-gray-600 {
-    color: #D1D5DB !important;
-    font-weight: 600 !important;
-  }
-  
-  .dark .text-gray-500 {
-    color: #E5E7EB !important;
-    font-weight: 600 !important;
-  }
-  
-  .dark .text-gray-400 {
-    color: #F3F4F6 !important;
-    font-weight: 600 !important;
-  }
-  
-  /* Dark Mode - Gray text on white backgrounds */
-  .dark .bg-white .text-gray-600,
-  .dark .white-bg-card .text-gray-600 {
-    color: #4B5563 !important;
-  }
-  
-  .dark .bg-white .text-gray-500,
-  .dark .white-bg-card .text-gray-500 {
-    color: #6B7280 !important;
-  }
-  
-  .dark .bg-white .text-gray-400,
-  .dark .white-bg-card .text-gray-400 {
-    color: #9CA3AF !important;
-  }
-  
-  /* ===== LIGHT MODE TEXT COLORS ===== */
-  
-  /* Light Mode Text Colors for I-Ching Components */
-  body:not(.dark) .i-ching-component,
-  body:not(.dark) .i-ching-component * {
-    color: #000000 !important;
-  }
-  
-  body:not(.dark) .i-ching-component h1,
-  body:not(.dark) .i-ching-component h2,
-  body:not(.dark) .i-ching-component h3,
-  body:not(.dark) .i-ching-component h4,
-  body:not(.dark) .i-ching-component h5,
-  body:not(.dark) .i-ching-component h6 {
-    color: #000000 !important;
-    font-weight: 700;
-  }
-  
-  body:not(.dark) .i-ching-component .text-muted-foreground {
-    color: #374151 !important;
-  }
-  
-  body:not(.dark) .i-ching-component .text-gray-600 {
-    color: #4B5563 !important;
-  }
-  
-  body:not(.dark) .i-ching-component .text-gray-500 {
-    color: #6B7280 !important;
-  }
-  
   /* ===== CARD STYLES ===== */
   
   /* Card Styles */
@@ -276,14 +90,17 @@
   
   /* Light Mode Cards */
   body:not(.dark) .moonrise-card {
-    @apply bg-white/95 border-white/30 hover:border-white/50 hover:shadow-black/5;
     background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  body:not(.dark) .moonrise-card:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   }
   
   /* Light Mode - I-Ching Component Cards với viền đen */
   body:not(.dark) .i-ching-component .moonrise-card,
-  body:not(.dark) .i-ching-component .mystical-card {
-    @apply bg-white;
     background: #FFFFFF !important;
     border: 2px solid #000000 !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -308,13 +125,21 @@
   
   /* Dark Mode Cards */
   body.dark .moonrise-card {
-    @apply bg-gray-800/90 border-gray-700/50 hover:border-gray-600/50;
     background: rgba(31, 41, 55, 0.9);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+  }
+  
+  body.dark .moonrise-card:hover {
+    border-color: rgba(75, 85, 99, 0.5);
   }
   
   body.dark .mystical-card {
-    @apply bg-gray-800/90 border-yellow-500/20 hover:border-yellow-500/40;
     background: rgba(31, 41, 55, 0.9);
+    border: 1px solid rgba(234, 179, 8, 0.2);
+  }
+  
+  body.dark .mystical-card:hover {
+    border-color: rgba(234, 179, 8, 0.4);
   }
   
   /* Dark Mode - Special handling for cards with white backgrounds */
@@ -327,48 +152,68 @@
   
   /* Button Styles */
   .moonrise-button {
-    @apply font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    font-weight: 500;
+    transition: all 0.3s ease;
   }
   
   /* Light Mode Buttons */
   body:not(.dark) .moonrise-button {
-    @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 hover:shadow-blue-500/25;
+    background: linear-gradient(to right, #3b82f6, #9333ea);
+    color: white;
+  }
+  
+  body:not(.dark) .moonrise-button:hover {
+    background: linear-gradient(to right, #2563eb, #7c3aed);
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.25);
   }
   
   /* Dark Mode Buttons */
   body.dark .moonrise-button {
-    @apply bg-gradient-to-r from-blue-400 to-purple-500 text-white hover:from-blue-500 hover:to-purple-600 hover:shadow-blue-400/25;
+    background: linear-gradient(to right, #60a5fa, #a855f7);
+    color: white;
+  }
+  
+  body.dark .moonrise-button:hover {
+    background: linear-gradient(to right, #3b82f6, #9333ea);
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(96, 165, 250, 0.25);
   }
   
   .mystical-button {
-    @apply font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    font-weight: 500;
+    transition: all 0.3s ease;
   }
   
   /* Light Mode Mystical Buttons */
   body:not(.dark) .mystical-button {
-    @apply bg-gradient-to-r from-mystical-gold to-yellow-600 text-mystical-dark-purple hover:from-yellow-500 hover:to-mystical-gold hover:shadow-mystical-gold/25;
+    background: linear-gradient(to right, hsl(var(--mystical-gold)), #ca8a04);
+    color: hsl(var(--mystical-dark-purple));
+  }
+  
+  body:not(.dark) .mystical-button:hover {
+    background: linear-gradient(to right, #eab308, hsl(var(--mystical-gold)));
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px hsla(var(--mystical-gold), 0.25);
   }
   
   /* Dark Mode Mystical Buttons */
   body.dark .mystical-button {
-    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 hover:from-yellow-500 hover:to-yellow-600 hover:shadow-yellow-400/25;
+    background: linear-gradient(to right, #facc15, #eab308);
+    color: #111827;
+  }
+  
+  body.dark .mystical-button:hover {
+    background: linear-gradient(to right, #eab308, #d97706);
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(250, 204, 21, 0.25);
   }
   
   /* ===== ICON COLORS ===== */
   
   /* Icon Colors */
-  body:not(.dark) .i-ching-component svg {
-    color: #000000 !important;
-  }
-  
   body.dark svg {
     color: #FFFFFF !important;
-  }
-  
-  /* Dark Mode - Icons on white backgrounds */
-  body.dark .bg-white svg,
-  body.dark .white-bg-card svg {
-    color: #000000 !important;
   }
   
   /* ===== INPUT STYLES ===== */
@@ -377,59 +222,49 @@
   body:not(.dark) input,
   body:not(.dark) select,
   body:not(.dark) textarea {
-    @apply bg-white/50 border-white/20 text-black;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: #000000 !important;
   }
   
   body.dark input,
   body.dark select,
   body.dark textarea {
-    @apply bg-gray-700/50 border-gray-600/50 text-white;
+    background: rgba(55, 65, 81, 0.5);
+    border: 1px solid rgba(75, 85, 99, 0.5);
     color: #FFFFFF !important;
     font-weight: 600;
-  }
-  
-  /* Dark Mode - Inputs on white backgrounds */
-  body.dark .bg-white input,
-  body.dark .bg-white select,
-  body.dark .bg-white textarea,
-  body.dark .white-bg-card input,
-  body.dark .white-bg-card select,
-  body.dark .white-bg-card textarea {
-    color: #000000 !important;
-    background: rgba(255, 255, 255, 0.9) !important;
-    border-color: #D1D5DB !important;
   }
   
   /* ===== BADGE STYLES ===== */
   
   /* Badge Styles */
   body:not(.dark) .badge {
-    @apply bg-gray-100 text-gray-800 border-gray-300;
+    background: #f3f4f6;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
   }
   
   body.dark .badge {
-    @apply bg-gray-700 text-gray-100 border-gray-600;
+    background: #374151;
+    color: #f3f4f6;
+    border: 1px solid #4b5563;
     font-weight: 600;
-  }
-  
-  /* Dark Mode - Badges on white backgrounds */
-  body.dark .bg-white .badge,
-  body.dark .white-bg-card .badge {
-    background: #F3F4F6 !important;
-    color: #1F2937 !important;
-    border-color: #D1D5DB !important;
   }
   
   /* ===== ALERT STYLES ===== */
   
   /* Alert Styles */
   body:not(.dark) .alert {
-    @apply bg-white border-gray-200 text-gray-800;
+    background: white;
+    border: 1px solid #e5e7eb;
+    color: #1f2937;
   }
   
   body.dark .alert {
-    @apply bg-gray-800 border-gray-700 text-gray-100;
+    background: #1f2937;
+    border: 1px solid #374151;
+    color: #f3f4f6;
     font-weight: 600;
   }
   
@@ -437,39 +272,42 @@
   
   /* Separator Styles */
   body:not(.dark) .separator {
-    @apply bg-gray-200;
+    background: #e5e7eb;
   }
   
   body.dark .separator {
-    @apply bg-gray-700;
-  }
-  
-  /* Dark Mode - Separators on white backgrounds */
-  body.dark .bg-white .separator,
-  body.dark .white-bg-card .separator {
-    background: #E5E7EB !important;
+    background: #374151;
   }
   
   /* ===== SCROLL AREA STYLES ===== */
   
   /* Scroll Area Styles */
   body:not(.dark) .scroll-area {
-    @apply bg-white;
+    background: white;
   }
   
   body.dark .scroll-area {
-    @apply bg-gray-800;
+    background: #1f2937;
   }
   
   /* ===== SECTION TITLE ===== */
   
   /* Section Title */
   .section-title {
-    @apply text-2xl md:text-3xl font-bold mb-4 text-center animate-fade-in;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 1.875rem;
+    }
   }
   
   body:not(.dark) .section-title {
-    @apply text-gray-800;
+    color: #1f2937;
   }
   
   body.dark .section-title {
@@ -535,33 +373,79 @@
   
   /* Enhanced responsive utilities */
   .responsive-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .responsive-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .responsive-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   
   .responsive-padding {
-    @apply px-4 sm:px-6 lg:px-8;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .responsive-padding {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .responsive-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
   
   .responsive-text {
-    @apply text-sm sm:text-base lg:text-lg;
+    font-size: 0.875rem;
+  }
+  
+  @media (min-width: 640px) {
+    .responsive-text {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .responsive-text {
+      font-size: 1.125rem;
+    }
   }
   
   /* Smooth transitions for all interactive elements */
   .smooth-transition {
-    @apply transition-all duration-300 ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   
   /* Focus states for accessibility */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    outline: none;
+  }
+  
+  .focus-ring:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
   }
   
   body:not(.dark) .focus-ring {
-    @apply focus:ring-blue-500;
+    /* Light mode focus handled above */
   }
   
   body.dark .focus-ring {
-    @apply focus:ring-blue-400;
+    /* Dark mode focus handled above */
   }
 }
 
@@ -597,33 +481,35 @@
 
 /* Loading states */
 .loading-skeleton {
-  @apply animate-pulse rounded;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  border-radius: 0.375rem;
 }
 
 body:not(.dark) .loading-skeleton {
-  @apply bg-gray-200;
+  background: #e5e7eb;
 }
 
 body.dark .loading-skeleton {
-  @apply bg-gray-700;
+  background: #374151;
 }
 
 /* Mobile-first responsive breakpoints */
 @media (max-width: 640px) {
   .mobile-stack {
-    @apply flex-col space-y-3 space-x-0;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }
 
 @media (min-width: 768px) {
   .tablet-grid {
-    @apply grid-cols-2;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
   .desktop-grid {
-    @apply grid-cols-3;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -657,14 +543,6 @@ body.dark {
     font-weight: 700 !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
   }
-  
-  /* High contrast - White backgrounds in dark mode */
-  body.dark .bg-white *,
-  body.dark .white-bg-card * {
-    color: #000000 !important;
-    font-weight: 700 !important;
-    text-shadow: none !important;
-  }
 }
 
 /* ===== IMAGE TEXT OVERLAY IMPROVEMENTS ===== */
@@ -697,12 +575,6 @@ body.dark .dialog-content.white-bg,
 body.dark .popover-content.white-bg,
 body.dark .dropdown-content.white-bg {
   background: #FFFFFF !important;
-  color: #000000 !important;
-}
-
-body.dark .dialog-content.white-bg *,
-body.dark .popover-content.white-bg *,
-body.dark .dropdown-content.white-bg * {
   color: #000000 !important;
 }
 
