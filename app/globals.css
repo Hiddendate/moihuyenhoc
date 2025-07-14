@@ -1,36 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
-:root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-  --primary: 221.2 83.2% 53.3%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222.2 84% 4.9%;
-  --muted: 210 40% 96%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96%;
-  --accent-foreground: 222.2 84% 4.9%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 221.2 83.2% 53.3%;
-  --radius: 0.75rem;
-  --moonrise-start: #DAE2F8;
-  --moonrise-end: #D6A4A4;
-  --mystical-gold: 45 69% 52%;
-  --mystical-deep-purple: 266 69% 39%;
-  --mystical-dark-purple: 266 69% 18%;
+
+/* General body styles */
+body {
+  @apply bg-background text-foreground;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+/* Links */
+a {
+  @apply text-blue-500 hover:underline;
+}
+
+/* Dark mode specific styles */
 .dark {
   --background: 222.2 84% 4.9%;
   --foreground: 210 40% 98%;
@@ -39,7 +39,7 @@
   --popover: 222.2 84% 4.9%;
   --popover-foreground: 210 40% 98%;
   --primary: 210 40% 98%;
-  --primary-foreground: 222.2 84% 4.9%;
+  --primary-foreground: 222.2 47.4% 11.2%;
   --secondary: 217.2 32.6% 17.5%;
   --secondary-foreground: 210 40% 98%;
   --muted: 217.2 32.6% 17.5%;
@@ -51,550 +51,54 @@
   --border: 217.2 32.6% 17.5%;
   --input: 217.2 32.6% 17.5%;
   --ring: 212.7 26.8% 83.9%;
-  --moonrise-start: #243B55;
-  --moonrise-end: #141E30;
-  --mystical-gold: 45 69% 62%;
-  --mystical-deep-purple: 266 69% 49%;
-  --mystical-dark-purple: 266 69% 28%;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  
-  body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Roboto', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    min-height: 100vh;
-  }
-  
-  /* Light Mode Background */
-  body:not(.dark) {
-    background: linear-gradient(135deg, var(--moonrise-start) 0%, var(--moonrise-end) 100%);
-  }
-  
-  /* Dark Mode Background */
-  body.dark {
-    background: linear-gradient(to left, #243B55, #141E30);
-    color: #FFFFFF;
-    font-weight: 600;
-  }
-  
-  /* ===== CARD STYLES ===== */
-  
-  /* Card Styles */
-  .moonrise-card {
-    @apply backdrop-blur-sm border transition-all duration-300 hover:shadow-lg;
-  }
-  
-  /* Light Mode Cards */
-  body:not(.dark) .moonrise-card {
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-  
-  body:not(.dark) .moonrise-card:hover {
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* Light Mode - I-Ching Component Cards với viền đen */
-  body:not(.dark) .i-ching-component .moonrise-card,
-    background: #FFFFFF !important;
-    border: 2px solid #000000 !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Light Mode - Dị Bốc Tiên Tri Cards với nền xanh dương */
-  body:not(.dark) .di-boc-topic-cards .topic-group-card {
-    background: #3B82F6 !important;
-    border: 2px solid #1E40AF !important;
-    color: #FFFFFF !important;
-  }
-  
-  body:not(.dark) .di-boc-topic-cards .topic-group-card * {
-    color: #FFFFFF !important;
-  }
-  
-  body:not(.dark) .di-boc-topic-cards .topic-group-card .topic-item {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-  }
-  
-  /* Dark Mode Cards */
-  body.dark .moonrise-card {
-    background: rgba(31, 41, 55, 0.9);
-    border: 1px solid rgba(55, 65, 81, 0.5);
-  }
-  
-  body.dark .moonrise-card:hover {
-    border-color: rgba(75, 85, 99, 0.5);
-  }
-  
-  body.dark .mystical-card {
-    background: rgba(31, 41, 55, 0.9);
-    border: 1px solid rgba(234, 179, 8, 0.2);
-  }
-  
-  body.dark .mystical-card:hover {
-    border-color: rgba(234, 179, 8, 0.4);
-  }
-  
-  /* Dark Mode - Special handling for cards with white backgrounds */
-  body.dark .moonrise-card.white-bg-card {
-    background: #FFFFFF !important;
-    border: 2px solid #374151 !important;
-  }
-  
-  /* ===== BUTTON STYLES ===== */
-  
-  /* Button Styles */
-  .moonrise-button {
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
-  
-  /* Light Mode Buttons */
-  body:not(.dark) .moonrise-button {
-    background: linear-gradient(to right, #3b82f6, #9333ea);
-    color: white;
-  }
-  
-  body:not(.dark) .moonrise-button:hover {
-    background: linear-gradient(to right, #2563eb, #7c3aed);
-    transform: scale(1.05);
-    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.25);
-  }
-  
-  /* Dark Mode Buttons */
-  body.dark .moonrise-button {
-    background: linear-gradient(to right, #60a5fa, #a855f7);
-    color: white;
-  }
-  
-  body.dark .moonrise-button:hover {
-    background: linear-gradient(to right, #3b82f6, #9333ea);
-    transform: scale(1.05);
-    box-shadow: 0 10px 15px -3px rgba(96, 165, 250, 0.25);
-  }
-  
-  .mystical-button {
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
-  
-  /* Light Mode Mystical Buttons */
-  body:not(.dark) .mystical-button {
-    background: linear-gradient(to right, hsl(var(--mystical-gold)), #ca8a04);
-    color: hsl(var(--mystical-dark-purple));
-  }
-  
-  body:not(.dark) .mystical-button:hover {
-    background: linear-gradient(to right, #eab308, hsl(var(--mystical-gold)));
-    transform: scale(1.05);
-    box-shadow: 0 10px 15px -3px hsla(var(--mystical-gold), 0.25);
-  }
-  
-  /* Dark Mode Mystical Buttons */
-  body.dark .mystical-button {
-    background: linear-gradient(to right, #facc15, #eab308);
-    color: #111827;
-  }
-  
-  body.dark .mystical-button:hover {
-    background: linear-gradient(to right, #eab308, #d97706);
-    transform: scale(1.05);
-    box-shadow: 0 10px 15px -3px rgba(250, 204, 21, 0.25);
-  }
-  
-  /* ===== ICON COLORS ===== */
-  
-  /* Icon Colors */
-  body.dark svg {
-    color: #FFFFFF !important;
-  }
-  
-  /* ===== INPUT STYLES ===== */
-  
-  /* Input Styles */
-  body:not(.dark) input,
-  body:not(.dark) select,
-  body:not(.dark) textarea {
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #000000 !important;
-  }
-  
-  body.dark input,
-  body.dark select,
-  body.dark textarea {
-    background: rgba(55, 65, 81, 0.5);
-    border: 1px solid rgba(75, 85, 99, 0.5);
-    color: #FFFFFF !important;
-    font-weight: 600;
-  }
-  
-  /* ===== BADGE STYLES ===== */
-  
-  /* Badge Styles */
-  body:not(.dark) .badge {
-    background: #f3f4f6;
-    color: #1f2937;
-    border: 1px solid #d1d5db;
-  }
-  
-  body.dark .badge {
-    background: #374151;
-    color: #f3f4f6;
-    border: 1px solid #4b5563;
-    font-weight: 600;
-  }
-  
-  /* ===== ALERT STYLES ===== */
-  
-  /* Alert Styles */
-  body:not(.dark) .alert {
-    background: white;
-    border: 1px solid #e5e7eb;
-    color: #1f2937;
-  }
-  
-  body.dark .alert {
-    background: #1f2937;
-    border: 1px solid #374151;
-    color: #f3f4f6;
-    font-weight: 600;
-  }
-  
-  /* ===== SEPARATOR STYLES ===== */
-  
-  /* Separator Styles */
-  body:not(.dark) .separator {
-    background: #e5e7eb;
-  }
-  
-  body.dark .separator {
-    background: #374151;
-  }
-  
-  /* ===== SCROLL AREA STYLES ===== */
-  
-  /* Scroll Area Styles */
-  body:not(.dark) .scroll-area {
-    background: white;
-  }
-  
-  body.dark .scroll-area {
-    background: #1f2937;
-  }
-  
-  /* ===== SECTION TITLE ===== */
-  
-  /* Section Title */
-  .section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  @media (min-width: 768px) {
-    .section-title {
-      font-size: 1.875rem;
-    }
-  }
-  
-  body:not(.dark) .section-title {
-    color: #1f2937;
-  }
-  
-  body.dark .section-title {
-    color: #FFFFFF !important;
-    font-weight: 800 !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
-  }
-  
-  /* ===== FONT STYLES ===== */
-  
-  /* Font Styles */
-  .font-mystical {
-    font-family: 'Roboto', serif;
-    font-weight: 600;
-  }
-  
-  body.dark .font-mystical {
-    font-weight: 700;
-  }
-  
-  .font-hebrew {
-    font-family: 'Times New Roman', serif;
-  }
-  
-  .font-greek {
-    font-family: 'Times New Roman', serif;
-  }
-  
-  /* ===== BACKGROUND UTILITIES ===== */
-  
-  /* Background Utilities */
-  .cosmic-background {
-    background: linear-gradient(135deg, var(--moonrise-start) 0%, var(--moonrise-end) 100%);
-  }
-  
-  body.dark .cosmic-background {
-    background: linear-gradient(to left, #243B55, #141E30);
-  }
+/* Light mode specific styles */
+body:not(.dark) {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
 }
 
-@layer components {
-  .moonrise-background {
-    background: linear-gradient(135deg, var(--moonrise-start) 0%, var(--moonrise-end) 100%);
-  }
-  
-  body.dark .moonrise-background {
-    background: linear-gradient(to left, #243B55, #141E30);
-  }
-  
-  .content-container {
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  body:not(.dark) .content-container {
-    background: rgba(255, 255, 255, 0.1);
-  }
-  
-  body.dark .content-container {
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  /* Enhanced responsive utilities */
-  .responsive-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  @media (min-width: 640px) {
-    .responsive-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .responsive-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  .responsive-padding {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  @media (min-width: 640px) {
-    .responsive-padding {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .responsive-padding {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
-  
-  .responsive-text {
-    font-size: 0.875rem;
-  }
-  
-  @media (min-width: 640px) {
-    .responsive-text {
-      font-size: 1rem;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .responsive-text {
-      font-size: 1.125rem;
-    }
-  }
-  
-  /* Smooth transitions for all interactive elements */
-  .smooth-transition {
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Focus states for accessibility */
-  .focus-ring {
-    outline: none;
-  }
-  
-  .focus-ring:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
-  }
-  
-  body:not(.dark) .focus-ring {
-    /* Light mode focus handled above */
-  }
-  
-  body.dark .focus-ring {
-    /* Dark mode focus handled above */
-  }
+
+/* Dark Mode - I-Ching Component Cards */
+.dark .i-ching-component .moonrise-card {
+  background: #1a1a1a !important;
+  border: 2px solid #444 !important;
 }
 
-/* Enhanced animations for better UX */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-  0% { transform: translateY(20px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-  100% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-/* Performance optimizations */
-.will-change-transform {
-  will-change: transform;
-}
-
-.will-change-opacity {
-  will-change: opacity;
-}
-
-/* Loading states */
-.loading-skeleton {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  border-radius: 0.375rem;
-}
-
-body:not(.dark) .loading-skeleton {
-  background: #e5e7eb;
-}
-
-body.dark .loading-skeleton {
-  background: #374151;
-}
-
-/* Mobile-first responsive breakpoints */
-@media (max-width: 640px) {
-  .mobile-stack {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .tablet-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .desktop-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* ===== HIGH CONTRAST MODE SUPPORT ===== */
-
-/* Accessibility improvements for dark mode */
-body.dark {
-  --text-primary: #FFFFFF;
-  --text-secondary: #E5E7EB;
-  --text-muted: #D1D5DB;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  body.dark {
-    --text-primary: #FFFFFF;
-    --text-secondary: #FFFFFF;
-    --text-muted: #F3F4F6;
-    font-weight: 700;
-  }
-  
-  body:not(.dark) {
-    --text-primary: #000000;
-    --text-secondary: #000000;
-    --text-muted: #1F2937;
-    font-weight: 600;
-  }
-  
-  /* Tăng độ tương phản cho high contrast mode */
-  body.dark * {
-    font-weight: 700 !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
-  }
-}
-
-/* ===== IMAGE TEXT OVERLAY IMPROVEMENTS ===== */
-
-/* Cải thiện khả năng đọc cho hình ảnh minh họa trong dark mode */
-body.dark img {
-  filter: brightness(1.1) contrast(1.1);
-}
-
-body.dark .image-text-overlay {
-  background: rgba(0, 0, 0, 0.8);
-  color: #FFFFFF;
-  font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-/* ===== SPECIFIC COMPONENT OVERRIDES ===== */
-
-/* Dark Mode - Specific overrides for complex components */
-body.dark .dialog-content,
-body.dark .popover-content,
-body.dark .dropdown-content {
-  background: #1F2937 !important;
-  border: 1px solid #374151 !important;
-  color: #FFFFFF !important;
-}
-
-/* Dark Mode - White dialog/popover content */
-body.dark .dialog-content.white-bg,
-body.dark .popover-content.white-bg,
-body.dark .dropdown-content.white-bg {
+/* Light Mode - I-Ching Component Cards với viền đen */
+body:not(.dark) .i-ching-component .moonrise-card {
   background: #FFFFFF !important;
-  color: #000000 !important;
+  border: 2px solid #000000 !important;
 }
 
-/* ===== UTILITY CLASSES FOR MANUAL OVERRIDE ===== */
-
-/* Utility classes for manual text color control */
-.dark-text-white {
-  color: #FFFFFF !important;
+/* Calendar component styles */
+.react-calendar {
+  @apply border-none;
 }
 
-.dark-text-black {
-  color: #000000 !important;
+.react-calendar__tile--active {
+  @apply bg-primary text-primary-foreground;
 }
 
-body.dark .force-white-text,
-body.dark .force-white-text * {
-  color: #FFFFFF !important;
-}
-
-body.dark .force-black-text,
-body.dark .force-black-text * {
-  color: #000000 !important;
+/* Sonner component styles */
+.sonner-toast {
+  @apply bg-card text-card-foreground border-border;
 }
